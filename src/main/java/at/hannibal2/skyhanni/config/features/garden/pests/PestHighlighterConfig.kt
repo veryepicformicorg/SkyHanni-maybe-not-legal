@@ -6,10 +6,16 @@ import io.github.notenoughupdates.moulconfig.annotations.ConfigEditorBoolean
 import io.github.notenoughupdates.moulconfig.annotations.ConfigOption
 import io.github.notenoughupdates.moulconfig.observer.Property
 
-class PestESPConfig {
+class PestHighlighterConfig {
     @Expose
-    @ConfigOption(name = "Enabled", desc = "Enable Pest ESP.")
+    @ConfigOption(name = "Enabled", desc = "Enable Pest Highlighter.")
     @ConfigEditorBoolean
     @FeatureToggle
-    val enabled: Property<Boolean> = Property.of(false)
+    val enabled: Property<Boolean> = Property.of(true)
+
+    @Expose
+    @ConfigOption(name = "Show Tracers", desc = "Show Tracers to Pests..")
+    @ConfigEditorBoolean
+    @FeatureToggle
+    var showTracers: Boolean = true
 }
