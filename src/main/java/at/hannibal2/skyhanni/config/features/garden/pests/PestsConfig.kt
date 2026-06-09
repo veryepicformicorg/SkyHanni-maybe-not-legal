@@ -21,6 +21,12 @@ class PestsConfig {
     @Accordion
     val pestFinder: PestFinderConfig = PestFinderConfig()
 
+
+    @Expose
+    @ConfigOption(name = "Pest ESP", desc = "")
+    @Accordion
+    val pestESP: PestESPConfig = PestESPConfig()
+
     // TODO rename to waypoint
     @Expose
     @ConfigOption(name = "Pest Waypoint", desc = "")
