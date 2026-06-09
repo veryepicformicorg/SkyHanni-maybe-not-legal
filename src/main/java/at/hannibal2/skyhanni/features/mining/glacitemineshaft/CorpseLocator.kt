@@ -52,20 +52,16 @@ object CorpseLocator {
             .forEach { entity ->
                 val helmetName = entity.getStandHelmet()?.getInternalName() ?: return
                 val corpseType = MineshaftWaypointType.getByHelmetOrNull(helmetName) ?: return
+                val article = if (corpseType.displayText == "Umber Corpse") "an" else "a"
+                ChatUtils.chat("Located $article ${corpseType.displayText} and marked its location with a waypoint.")
 
-                val canSee = entity.getLorenzVec().canBeSeen(-1..3)
-                if (canSee) {
-                    val article = if (corpseType.displayText == "Umber Corpse") "an" else "a"
-                    ChatUtils.chat("Located $article ${corpseType.displayText} and marked its location with a waypoint.")
-
-                    MineshaftWaypoints.waypoints.add(
-                        MineshaftWaypoint(
-                            waypointType = corpseType,
-                            location = entity.getLorenzVec().up(),
-                            isCorpse = true,
-                        ),
-                    )
-                }
+                MineshaftWaypoints.waypoints.add(
+                    MineshaftWaypoint(
+                        waypointType = corpseType,
+                        location = entity.getLorenzVec().up(),
+                        isCorpse = true,
+                    ),
+                )
             }
     }
 
