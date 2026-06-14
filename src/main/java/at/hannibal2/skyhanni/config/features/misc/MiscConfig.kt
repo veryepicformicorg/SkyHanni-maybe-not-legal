@@ -524,6 +524,14 @@ class MiscConfig {
     var muteStereoPants: Boolean = false
 
     @Expose
+    @ConfigOption(
+        name = "Ghost Block Keybind",
+        desc = "§2GHOST BLOCK"
+    )
+    @ConfigEditorKeybind(defaultKey = GLFW.GLFW_KEY_G)
+    var ghostBlockKey: Int = GLFW.GLFW_KEY_G
+
+    @Expose
     @ConfigOption(name = "Gift Clean Display", desc = "Show only 'CLICK TO OPEN' on gifts.")
     @SearchTag("century cake slice")
     @ConfigEditorBoolean
