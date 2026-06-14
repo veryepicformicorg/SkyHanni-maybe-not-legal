@@ -513,4 +513,12 @@ class MiscConfig {
     @ConfigEditorBoolean
     @FeatureToggle
     var achievementMessages: Boolean = true
+
+    @Expose
+    @ConfigOption(
+        name = "Ghost Block Keybind",
+        desc = "§2GHOST BLOCK"
+    )
+    @ConfigEditorKeybind(defaultKey = GLFW.GLFW_KEY_G)
+    var ghostBlockKey: Int = GLFW.GLFW_KEY_G
 }
