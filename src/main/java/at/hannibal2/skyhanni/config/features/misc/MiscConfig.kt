@@ -521,4 +521,10 @@ class MiscConfig {
     )
     @ConfigEditorKeybind(defaultKey = GLFW.GLFW_KEY_G)
     var ghostBlockKey: Int = GLFW.GLFW_KEY_G
+
+    @Expose
+    @ConfigOption(name = "Gift Clean Display", desc = "Show only 'CLICK TO OPEN' on gifts.")
+    @ConfigEditorBoolean
+    @FeatureToggle
+    var giftCleanDisplay: Boolean = false
 }

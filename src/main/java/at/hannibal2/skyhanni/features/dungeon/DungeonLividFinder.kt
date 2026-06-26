@@ -311,7 +311,7 @@ object DungeonLividFinder {
     }
 
     @HandleEvent
-    fun onDebug(event: DebugDataCollectEvent) {
+    fun onDebugDataCollect(event: DebugDataCollectEvent) {
         event.title("Livid Finder")
 
         if (!inLividBossRoom()) {
