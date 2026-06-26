@@ -537,4 +537,16 @@ class MiscConfig {
     @ConfigEditorBoolean
     @FeatureToggle
     var giftCleanDisplay: Boolean = false
+
+    @Expose
+    @ConfigOption(name = "Chest Opener", desc = "Funny Chest Opening thing")
+    @ConfigEditorBoolean
+    @FeatureToggle
+    var chestOpener: Boolean = false
+
+
+    @Expose
+    @ConfigOption(name = "Chest Opener Memory", desc = "Sentient Chest Opener")
+    @ConfigEditorBoolean
+    var chestOpenerMemory: Boolean = false
 }
