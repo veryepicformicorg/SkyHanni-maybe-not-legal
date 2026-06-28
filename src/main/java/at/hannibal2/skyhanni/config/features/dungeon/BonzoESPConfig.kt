@@ -16,7 +16,7 @@ class BonzoESPConfig {
     val enabled: Property<Boolean> = Property.of(true)
 
     @Expose
-    @ConfigOption(name = "Bnozo Color", desc = "Colour of Bozo")
+    @ConfigOption(name = "Bnozo Color", desc = "Color of Bozo")
     @ConfigEditorColour
     var color: ChromaColour = ChromaColour.fromStaticRGB(255, 0, 0, 255)
 }

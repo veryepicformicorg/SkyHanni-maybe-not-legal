@@ -17,6 +17,7 @@ import net.minecraft.world.entity.decoration.ArmorStand
 import net.minecraft.world.item.Items
 
 @SkyHanniModule
+@Suppress("SkullTexturesUseRepo")
 object PestHighlighter {
     private val config get() = PestApi.config.pestESP
     private var pests = mutableSetOf<ArmorStand>()
@@ -81,7 +82,9 @@ object PestHighlighter {
 
         val entities = EntityUtils.getEntities<ArmorStand>()
             .filter { entity ->
-                entity.isInvisible && entity.getStandHelmet()?.itemType == Items.PLAYER_HEAD && PEST_HEADS.contains(entity.getStandHelmet()?.getSkullTexture())
+                entity.isInvisible &&
+                    entity.getStandHelmet()?.itemType == Items.PLAYER_HEAD &&
+                    PEST_HEADS.contains(entity.getStandHelmet()?.getSkullTexture())
             }
         pests.clear()
         for (entity in entities) {
