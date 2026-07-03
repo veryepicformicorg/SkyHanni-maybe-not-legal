@@ -65,10 +65,8 @@ object CorpseFinder {
         for ((entity, canBeSeenTicks) in corpseEntities) {
             if (canBeSeenTicks >= MARK_AS_FOUND_TICKS_THRESHOLD) continue
 
-            if (!entity.getLorenzVec().canBeSeen(-1..3)) {
-                corpseEntities[entity] = 0
-                continue
-            }
+            corpseEntities[entity] = 0
+            continue
 
             val corpseType = CorpseType.fromEntityOrNull(entity) ?: ErrorManager.skyHanniError(
                 "Got CorpseType of null for entity in corpseEntities",
