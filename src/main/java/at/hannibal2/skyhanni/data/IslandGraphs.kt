@@ -189,7 +189,7 @@ object IslandGraphs {
     @HandleEvent
     fun onWorldChange() {
         currentIslandGraph = null
-        if (currentTarget != null) NavigationFeedback.sendPathFindMessage("§e[SkyHanni] Navigation stopped because of world switch!")
+        if (currentTarget != null) NavigationFeedback.sendPathFindMessage("§e[FormicHanni] Navigation stopped because of world switch!")
         resetNavigation()
     }
 
@@ -346,7 +346,7 @@ object IslandGraphs {
         GraphUtils.updatePlayerPosition()
         currentTarget?.let {
             if (distanceSqToPlayer(it) < TARGET_REACHED_DISTANCE_SQ) {
-                NavigationFeedback.sendPathFindMessage("§e[SkyHanni] Navigation reached §r$navigationLabel§e!")
+                NavigationFeedback.sendPathFindMessage("§e[FormicHanni] Navigation reached §r$navigationLabel§e!")
                 resetNavigation()
                 onFound()
             }
@@ -457,7 +457,7 @@ object IslandGraphs {
 
     fun stopNavigation() {
         if (currentTarget != null) {
-            NavigationFeedback.sendPathFindMessage("§e[SkyHanni] Navigation stopped!")
+            NavigationFeedback.sendPathFindMessage("§e[FormicHanni] Navigation stopped!")
             currentTarget = null
         }
         goal = null
@@ -561,7 +561,7 @@ object IslandGraphs {
         }
 
         val percentage = (1 - (distance / totalDistance)) * 100
-        val component = "§e[SkyHanni] Navigating to §r$navigationLabel §f[§e$distance§f] §f(§c${percentage.roundTo(1)}%§f)".asComponent()
+        val component = "§e[FormicHanni] Navigating to §r$navigationLabel §f[§e$distance§f] §f(§c${percentage.roundTo(1)}%§f)".asComponent()
         component.onClick(onClick = ::cancelClick)
         component.hover = "§eClick to stop navigating!".asComponent()
         NavigationFeedback.sendPathFindMessage(component)

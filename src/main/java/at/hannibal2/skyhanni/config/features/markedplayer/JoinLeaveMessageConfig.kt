@@ -23,7 +23,7 @@ class JoinLeaveMessageConfig {
     val playersList: Property<String> = Property.of("hannibal2,Minikloon")
 
     @Expose
-    @ConfigOption(name = "Use Prefix", desc = "Should the [SkyHanni] prefix be included in the join/leave message?")
+    @ConfigOption(name = "Use Prefix", desc = "Should the [FormicHanni] prefix be included in the join/leave message?")
     @ConfigEditorBoolean
     var usePrefix: Boolean = true
 

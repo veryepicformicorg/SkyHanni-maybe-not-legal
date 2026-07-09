@@ -130,7 +130,7 @@ object FastFairySoulsPathfinder {
         fun pathToNext() {
             if (disabled) return
             if (route.isEmpty()) {
-                val message = "§e[SkyHanni] Found all §5$found Fairy Souls §ein ${SkyBlockUtils.currentIsland.displayName}!"
+                val message = "§e[FormicHanni] Found all §5$found Fairy Souls §ein ${SkyBlockUtils.currentIsland.displayName}!"
                 NavigationFeedback.sendPathFindMessage(message)
                 allFound("found last soul of ${SkyBlockUtils.currentIsland}")
             } else {
@@ -192,7 +192,7 @@ object FastFairySoulsPathfinder {
         if (event.isMod(5)) {
             if (calculating) {
                 val duration = calculatingStart.passedSince().format(showMilliSeconds = true)
-                "§e[SkyHanni] Calculating Fairy Soul route §b$duration".asComponent().send(calculatingMessageId)
+                "§e[FormicHanni] Calculating Fairy Soul route §b$duration".asComponent().send(calculatingMessageId)
             }
         }
     }
@@ -266,12 +266,12 @@ object FastFairySoulsPathfinder {
         if (data?.checkHaveAll() == true) return
         calculating = true
         calculatingStart = SimpleTimeMark.now()
-        "§e[SkyHanni] Calculating Fairy Soul route §b0s".asComponent().send(calculatingMessageId)
+        "§e[FormicHanni] Calculating Fairy Soul route §b0s".asComponent().send(calculatingMessageId)
 
         soulPathFindConfig.launch {
             val route = NavigationUtils.getRoute(missingSouls, maxIterations = 300, neighborhoodSize = 50).toMutableList()
             val duration = calculatingStart.passedSince()
-            "§e[SkyHanni] Calculated Fairy Soul route in §b${duration.format(showMilliSeconds = true)}".asComponent()
+            "§e[FormicHanni] Calculated Fairy Soul route in §b${duration.format(showMilliSeconds = true)}".asComponent()
                 .send(calculatingMessageId)
             calculating = false
             // TODO: fix the root issue of all changes being ignored while calculating (e.g. island change without this check or commands)

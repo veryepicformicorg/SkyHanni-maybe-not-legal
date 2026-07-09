@@ -24,7 +24,7 @@ object DungeonTrinityHelper {
             TitleManager.sendTitle("§dPossible Trinity")
             val msg = "5 puzzle dungeon, watch out for possible Trinity room!"
             if (config.sendPartyChat) {
-                HypixelCommands.partyChat("[SkyHanni] $msg")
+                HypixelCommands.partyChat("[FormicHanni] $msg")
             } else {
                 ChatUtils.chat(msg)
             }

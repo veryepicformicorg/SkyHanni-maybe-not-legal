@@ -37,9 +37,9 @@ import kotlin.reflect.KProperty0
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.times
 
-private const val DEBUG_PREFIX = "[SkyHanni Debug] §7"
-private const val USER_ERROR_PREFIX = "§c[SkyHanni] "
-private const val CHAT_PREFIX = "[SkyHanni] "
+private const val DEBUG_PREFIX = "[Nerdy FormicHanni] §7"
+private const val USER_ERROR_PREFIX = "§c[Angry FormicHanni] "
+private const val CHAT_PREFIX = "[FormicHanni] "
 
 @SkyHanniModule
 object ChatUtils {
@@ -492,7 +492,7 @@ object ChatUtils {
                 append(CHAT_PREFIX)
                 withColor(prefixColor)
             } else {
-                append(TextHelper.createGradientText(LorenzColor.YELLOW, LorenzColor.GOLD, CHAT_PREFIX))
+                append(TextHelper.createGradientText(LorenzColor.DARK_PURPLE, LorenzColor.RED, CHAT_PREFIX))
                 withColor(ChatFormatting.YELLOW)
             }
         }
