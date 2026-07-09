@@ -11,7 +11,6 @@ import at.hannibal2.skyhanni.events.mining.CorpseFoundEvent
 import at.hannibal2.skyhanni.skyhannimodule.SkyHanniModule
 import at.hannibal2.skyhanni.test.command.ErrorManager
 import at.hannibal2.skyhanni.utils.ItemUtils.getInternalName
-import at.hannibal2.skyhanni.utils.LocationUtils.canBeSeen
 import at.hannibal2.skyhanni.utils.RegexUtils.matches
 import at.hannibal2.skyhanni.utils.collection.CollectionUtils.addOrPut
 import at.hannibal2.skyhanni.utils.getLorenzVec
@@ -64,9 +63,6 @@ object CorpseFinder {
     fun onPlayerMove(event: EntityMoveEvent<LocalPlayer>) {
         for ((entity, canBeSeenTicks) in corpseEntities) {
             if (canBeSeenTicks >= MARK_AS_FOUND_TICKS_THRESHOLD) continue
-
-            corpseEntities[entity] = 0
-            continue
 
             val corpseType = CorpseType.fromEntityOrNull(entity) ?: ErrorManager.skyHanniError(
                 "Got CorpseType of null for entity in corpseEntities",
