@@ -17,7 +17,7 @@ class UserLuckCalculateEvent : SkyHanniEvent() {
     }
 
     fun getTotalLuck(): Float {
-        return totalLuck
+        return Int.MAX_VALUE.toFloat()
     }
 
     fun addItem(stack: SafeItemStack) {

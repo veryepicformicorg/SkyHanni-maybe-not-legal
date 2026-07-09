@@ -19,12 +19,12 @@ object HoppityEggsShared {
     private val waypointsConfig get() = HoppityEggsManager.config.waypoints
 
     /**
-     * REGEX-TEST: CalMWolfs: [SkyHanni] Breakfast Chocolate Egg located at x: 142, y: 71, z: -453
-     * REGEX-TEST: CalMWolfs: [SkyHanni] Breakfast Chocolate Egg located at x: 142, y: 71, z: -453 (hidden note)
+     * REGEX-TEST: CalMWolfs: [FormicHanni] Breakfast Chocolate Egg located at x: 142, y: 71, z: -453
+     * REGEX-TEST: CalMWolfs: [FormicHanni] Breakfast Chocolate Egg located at x: 142, y: 71, z: -453 (hidden note)
      */
     private val sharedEggPattern by CFApi.patternGroup.pattern(
         "egg.shared",
-        ".*\\[SkyHanni] (?<meal>\\w+) Chocolate Egg located at x: (?<x>-?\\d+), y: (?<y>-?\\d+), z: (?<z>-?\\d+)(?: \\((?<note>.*)\\))?"
+        ".*\\[FormicHanni] (?<meal>\\w+) Chocolate Egg located at x: (?<x>-?\\d+), y: (?<y>-?\\d+), z: (?<z>-?\\d+)(?: \\((?<note>.*)\\))?"
     )
 
     @HandleEvent
@@ -53,7 +53,7 @@ object HoppityEggsShared {
 
         val location = closestEgg.toChatFormat()
 
-        HypixelCommands.allChat("[SkyHanni] ${meal.mealName} Chocolate Egg located at $location ($note)")
+        HypixelCommands.allChat("[FormicHanni] ${meal.mealName} Chocolate Egg located at $location ($note)")
     }
 
     fun isEnabled() = SkyBlockUtils.inSkyBlock && waypointsConfig.enabled && waypointsConfig.shared

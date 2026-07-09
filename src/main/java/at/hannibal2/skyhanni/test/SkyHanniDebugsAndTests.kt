@@ -101,15 +101,15 @@ object SkyHanniDebugsAndTests {
 
     init {
         registerDebugScreenEntry("current_area", SkyBlockUtils::inSkyBlock) {
-            add("[SkyHanni] Current Area: ${HypixelData.skyBlockArea}")
-            add("[SkyHanni] Graph Area: ${SkyBlockUtils.graphArea}")
+            add("[FormicHanni] Current Area: ${HypixelData.skyBlockArea}")
+            add("[FormicHanni] Graph Area: ${SkyBlockUtils.graphArea}")
         }
 
         // TODO can we rename this to ore_block?
         registerDebugScreenEntry("targeted_oreblock", SkyBlockUtils::inSkyBlock) {
             BlockUtils.getTargetedBlockAtDistance(50.0).let { pos ->
                 OreBlock.getByStateOrNull(pos.getBlockStateAt())?.let { ore ->
-                    add("[SkyHanni] Looking at: ${ore.name} (${pos.toCleanString()})")
+                    add("[FormicHanni] Looking at: ${ore.name} (${pos.toCleanString()})")
                 }
             }
         }

@@ -90,7 +90,7 @@ object SpiderDenRelicPathfinder {
         fun pathToNext() {
             if (disabled) return
             if (route.isEmpty()) {
-                val message = "§e[SkyHanni] Found all §5$found Relics §ein Spider's Den!"
+                val message = "§e[FormicHanni] Found all §5$found Relics §ein Spider's Den!"
                 NavigationFeedback.sendPathFindMessage(message)
                 allFound("found last relic in Spider's Den")
             } else {
@@ -149,7 +149,7 @@ object SpiderDenRelicPathfinder {
         if (!config.spiderRelicPathfinder) return
         if (event.isMod(5) && calculating) {
             val duration = calculatingStart.passedSince().format(showMilliSeconds = true)
-            "§e[SkyHanni] Calculating Relic route §b$duration".asComponent().send(calculatingMessageId)
+            "§e[FormicHanni] Calculating Relic route §b$duration".asComponent().send(calculatingMessageId)
         }
     }
 
@@ -246,7 +246,7 @@ object SpiderDenRelicPathfinder {
 
         calculating = true
         calculatingStart = SimpleTimeMark.now()
-        "§e[SkyHanni] Calculating Relic route §b0s".asComponent().send(calculatingMessageId)
+        "§e[FormicHanni] Calculating Relic route §b0s".asComponent().send(calculatingMessageId)
 
         val currentIsland = SkyBlockUtils.currentIsland
         relicPathFindConfig.launch {
@@ -257,7 +257,7 @@ object SpiderDenRelicPathfinder {
             ).toMutableList()
 
             val duration = calculatingStart.passedSince().format(showMilliSeconds = true)
-            "§e[SkyHanni] Calculated Relic route in §b$duration".asComponent().send(calculatingMessageId)
+            "§e[FormicHanni] Calculated Relic route in §b$duration".asComponent().send(calculatingMessageId)
             calculating = false
 
             if (currentIsland == SkyBlockUtils.currentIsland) {

@@ -77,12 +77,12 @@ object InfernoMinionFeatures {
 
         if (event.slot.index == MINION_FUEL_SLOT) {
             event.toolTip.add("")
-            event.toolTip.add("§c[SkyHanni] is blocking you from taking this out!")
+            event.toolTip.add("§c[FormicHanni] is blocking you from taking this out!")
             event.toolTip.add("  §7(Bypass by holding the ${KeyboardManager.getModifierKeyName()} key)")
         }
         if (event.slot.index == MINION_PICKUP_SLOT) {
             event.toolTip.add("")
-            event.toolTip.add("§c[SkyHanni] is blocking you from picking this minion up!")
+            event.toolTip.add("§c[FormicHanni] is blocking you from picking this minion up!")
             event.toolTip.add("  §7(Bypass by holding the ${KeyboardManager.getModifierKeyName()} key)")
         }
     }
